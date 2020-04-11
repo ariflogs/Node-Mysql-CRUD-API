@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const morgan = require('morgan');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,6 +12,7 @@ var connection = mysql.createConnection({
 });
 
 app.use(express.json());
+app.use(morgan());
 
 
 // ======================= GET all tasks =======================
